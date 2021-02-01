@@ -25,4 +25,16 @@ Route::get('/', function () {
  */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// ROTTE PER UTENTI LOGGED
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->name('admin.')
+    ->middleware('auth')
+    ->group(function() {
+        // HOME ADMIN
+        Route::get('/', 'HomeController@index')->name('home');
+
+        // ROTTE POST CRUD
+    });
+
