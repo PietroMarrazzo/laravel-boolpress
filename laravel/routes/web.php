@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * ROTTA WELCOME PAGE
  */
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 /**
  * ROTTE PER IL LOGIN / REGISTRAZIONE
